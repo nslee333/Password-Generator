@@ -53,10 +53,27 @@ function arrayFromLowToHigh(low, high) {
   return array
 }
 
-
-
 function syncCharacterAmount(e) {
   const value = e.target.value;
   characterAmountNumber.value = value;
   characterAmountRange.value = value;
 }
+
+
+const COPY = document.querySelector('#copy');
+const PASTE = document.querySelector("#past");
+const VALUE = document.querySelector("#value");
+const BIN = document.querySelector("#paste-bin");
+
+
+function copyText() {
+    COPY.addEventListener('click', async () => {
+        await navigator.clipboard.writeText(VALUE.value);
+        alert("Copied!")
+    })
+
+    PASTE.addEventListener("click", async () => {
+        const READ = await navigator.clipboard.readText()
+        BIN.value = READ;
+    })
+    // https://www.youtube.com/watch?v=7c1K1SCmCb4

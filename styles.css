@@ -75,3 +75,21 @@ label {
     .btn:hover {
         background-color: #ffffff33;
     }
+.btn-cpy {
+        grid-column: span 2;
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        padding: .5rem 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 1rem;
+    }
+    
+.btn-cpy:hover {
+    background-color: #ffffff33;
+}
+
+
+
+
